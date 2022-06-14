@@ -29,6 +29,8 @@ margin-left: 35vw;
 }
 
 .input {
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 25px;
     padding: 10px 15px;
     text-align: center;
