@@ -10,9 +10,6 @@ const addTitleBtn = document.querySelector(".add-new");
 
 // end of from html:::::::::::::::::::::::::::
 
-
-// const favTitles = ["gotham", "Nana", "code geass", "supernatural"];
-
 const favTitles = [
     {
         title: "gotham",
@@ -26,6 +23,10 @@ const favTitles = [
         title: "supernaturals",
     },
 
+    {
+        title: "nana",
+    },
+
 ]
 
 const searchTitles = (e) => {
@@ -37,7 +38,6 @@ const searchTitles = (e) => {
     for (let i=0; i<array.length; i++){
 
         if(array[i].title.toLowerCase() === inputTxt ) {
-            console.log("ok");
             titleDisplay.textContent = array[i].title;
             const newTitleDiv = document.createElement("div");
             document.body.appendChild(newTitleDiv);

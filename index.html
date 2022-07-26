@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        button,
+        input {
+            font-size: 25px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Favourite Series and Anime</title>
 </head>
 
 <body>
     <div class="wrapper">
 
-        <h1 class="fav-title">Favourite Series and Anime: </h1>
-        <!-- div to display titles:: -->
-        <div class="title-display"></div>
+        <h1 class="fav-title">Search Favourite Series and Anime: </h1>
         <!-- searching if title included -->
         <div class="div-input">
             <input id="search-input" class="input search-input" type="text" placeholder="Title to search....">
             <button id="search-button" class="button search-button search-title">Search title</button>
         </div>
-
-
-        <!--  -->
-        <h1 class="current-title">Currently Watching: </h1>
         <!-- div to display titles:: -->
         <div class="title-display"></div>
+
         <!-- adding new title to collection -->
         <div class="div-input">
             <form action="">
@@ -36,6 +41,7 @@
 
                 <button class="button add-new">Add title to watching</button>
             </form>
+            <h1 class="current-title">Currently Watching: </h1>
         </div>
 
 
