@@ -59,6 +59,9 @@ const searchTitles = (e) => {
     // end of searchTitles()::::
 }
 
+let addedNewTitleDiv = document.createElement("div");
+   document.body.appendChild(addedNewTitleDiv);
+
 // function to add new title to watching list:
 
 const addNewTitle = function() {
@@ -72,6 +75,7 @@ const addNewTitle = function() {
     let newTitle = addInput.value;
     let number = addNumber.value;
     favTitles.push({title: newTitle, epNumber: number});
+    addedNewTitleDiv.textContent = `New title added: "${addInput.value}", number of episodes: ${addNumber.value}.`
     addInput.value = "";
     addNumber.value = "";
 
