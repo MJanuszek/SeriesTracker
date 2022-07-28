@@ -10,19 +10,23 @@
             font-size: 20px;
         }
 
+        .title-display {
+            font-size: 40px;
+        }
+
         button,
         input {
             font-size: 25px;
         }
     </style>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Favourite Series and Anime</title>
+    <title>Favourite Series</title>
 </head>
 
 <body>
     <div class="wrapper">
 
-        <h1 class="fav-title">Search Favourite Series and Anime: </h1>
+        <h1 class="fav-title">Search Favourite Series: </h1>
         <!-- searching if title included -->
         <div class="div-input">
             <input id="search-input" class="input search-input" type="text" placeholder="Title to search....">
@@ -33,20 +37,13 @@
 
         <!-- adding new title to collection -->
         <div class="div-input">
-            <form action="">
-                <input class="input add-input" type="text" placeholder="Add new title...">
-                <br>
-                <input class="input add-input" type="number" placeholder="Number of episodes...">
-                <br>
-
-                <button class="button add-new">Add title to watching</button>
-            </form>
+            <input class="input add-input" type="text" placeholder="Add new title...">
+            <br>
+            <input class="input add-number" type="number" placeholder="Number of episodes...">
+            <br>
+            <button class="button add-new">Add title to watching</button>
             <h1 class="current-title">Currently Watching: </h1>
         </div>
-
-
-
-
 
 
         <!-- end of wrapper -->

@@ -1,4 +1,5 @@
 
+
 // from HTML:
 const titleDisplay = document.querySelector(".title-display");
 let searchInput = document.querySelector(".search-input");
@@ -6,6 +7,7 @@ let searchInput = document.querySelector(".search-input");
 const searchButton = document.getElementById("search-button");
 // 
 let addInput = document.querySelector(".add-input");
+let addNumber = document.querySelector(".add-number");
 const addTitleBtn = document.querySelector(".add-new");
 
 // end of from html:::::::::::::::::::::::::::
@@ -13,18 +15,22 @@ const addTitleBtn = document.querySelector(".add-new");
 const favTitles = [
     {
         title: "gotham",
+        epNumber: 22,
     },
 
     {
         title: "code Geass",
+        epNumber: 44,
     },
 
     {
         title: "supernaturals",
+        epNumber: 222,
     },
 
     {
         title: "nana",
+        epNumber: 42,
     },
 
 ]
@@ -38,17 +44,15 @@ const searchTitles = (e) => {
     for (let i=0; i<array.length; i++){
 
         if(array[i].title.toLowerCase() === inputTxt ) {
-            titleDisplay.textContent = array[i].title;
+            titleDisplay.textContent = array[i].title + ": " + array[i].epNumber + " episodes";
             const newTitleDiv = document.createElement("div");
             document.body.appendChild(newTitleDiv);
             newTitleDiv.classList.add("title-display");
             newTitleDiv.textContent = array[i].title;
-            titleDisplay.textContent = "";
+            // titleDisplay.textContent = "";
             return
         } else if (array[i].title.toLowerCase() !== inputTxt && inputTxt !== "") {
             titleDisplay.textContent = "Title not found";
-            
-            
         }
         searchInput.value = "";
     }
@@ -57,27 +61,26 @@ const searchTitles = (e) => {
 
 // function to add new title to watching list:
 
-const addNewTitle = function(e) {
-    e.preventDefault();
-    let array = e.currentTarget.titlesArray;
-    let titleName = addInput.value;
-    console.log(titleName);
-    const watchingTitle = document.createElement("div");
-    document.body.appendChild(watchingTitle);
-    watchingTitle.classList.add("title-display");
-    watchingTitle.textContent = titleName;
-    array.push(titleName)
-    addInput = "";
-    if (addInput === "") {
-        return
+const addNewTitle = function() {
+    console.log("ok")
+    if (addInput.value === "") {
+        // return
+        alert("What is series title?")
+    } else if ( addNumber.value === "") {
+        alert("How many episodes?")
     }
-    
+    let newTitle = addInput.value;
+    let number = addNumber.value;
+    favTitles.push({title: newTitle, epNumber: number});
+    addInput.value = "";
+    addNumber.value = "";
 
 
     // end of addNewTitle
 }
 
 searchButton.myParam = favTitles;
+// button .property(titleArray) s
 addTitleBtn.titlesArray = favTitles;
 searchButton.addEventListener("click", searchTitles);
 addTitleBtn.addEventListener("click", addNewTitle);
